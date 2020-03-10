@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<body></body>
+    <h1>Prompt</h1>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 3</title>
+    <script>
+        var start = parseInt(prompt("Enter the Start: "));
+        var end = parseInt(prompt("Enter the End: "));
+        var step = parseInt(prompt("Enter the Step: "));
+
+        if(isNaN(start)==true||(isNaN(end)==true||isNaN(step)==true)){ // CHECK
+        alert("Invalid integer input, please reload and try again");
+        }
+        else if(step==0){ // CHECK IF STEP IS 0
+        alert("Invalid integer input, please reload and try again");
+        }
+        else if(start > end && step > 0){ // CHECK
+        alert("Invalid integer input, please reload and try again");
+        }
+        else if(start < end && step < 0){ // CHECK
+        alert("Invalid integer input, please reload and try again");
+        }
+        else{
+        var sum = 0;
+        document.write("The generated array is: ");
+        for(var i = start; i<= end; i+=step){
+        document.write(i+" ");
+        sum += i;
+        }
+        for(var i = start; i>= end; i+=step){
+        document.write(i+" ");
+        sum += i;
+        }
+        if(start < end){
+        document.write("<br>The sum is: "+sum+"<br>");
+        document.write("The binary absolute element values are: ");
+        for(var i = start; i<= end; i+=step){
+        var num = Math.abs(i);
+        document.write(num.toString(2)+" ");
+        }   
+        }
+        else{
+        document.write("<br>The sum is: "+sum+"<br>");
+        document.write("The binary absolute element values are: ");
+        for(var i = start; i>= end; i+=step){
+        var num = Math.abs(i);
+        document.write(num.toString(2)+" ");
+        }   
+        }
+          
+        }
+        </script>
+</head>
+</html>
